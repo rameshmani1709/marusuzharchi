@@ -34,7 +34,7 @@
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
 
     body {
       font-family: 'Poppins', system-ui, -apple-system, sans-serif;
@@ -508,10 +508,18 @@
         padding: 26px;
         border-radius: 16px;
         box-shadow: var(--shadow-lg);
-        transform: translateX(130%);
-        transition: transform 0.35s ease;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
       }
-      .nav-links.open { transform: translateX(0); }
+      .nav-links.open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
       .hamburger { display: flex; }
       .nav-cta { display: none; }
       .cards-grid, .why-grid, .mv-grid, .form-row { grid-template-columns: 1fr; }
