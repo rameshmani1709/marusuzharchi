@@ -441,7 +441,7 @@
     .footer-about p { margin-top: 18px; max-width: 320px; font-size: 0.95rem; }
     .footer h5 { color: #fff; font-size: 1.05rem; margin-bottom: 18px; }
     .footer-links li { margin-bottom: 11px; }
-    .footer-links a { font-size: 0.94rem; transition: color 0.2s ease, padding-left 0.2s ease; }
+    .footer-links a { font-size: 0.94rem; transition: color 0.2s ease, padding-left 0.2s ease; word-break: break-word; }
     .footer-links a:hover { color: var(--green-glow); padding-left: 5px; }
     .socials { display: flex; gap: 14px; margin-top: 6px; }
     .socials a {
@@ -492,6 +492,8 @@
       .hero-logo-wrap { width: min(340px, 80%); }
       .cards-grid { grid-template-columns: 1fr 1fr; }
       .why-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .footer-about { grid-column: 1 / -1; }
     }
     @media (max-width: 720px) {
       section { padding: 64px 0; }
@@ -514,6 +516,9 @@
       .nav-cta { display: none; }
       .cards-grid, .why-grid, .mv-grid, .form-row { grid-template-columns: 1fr; }
       .hero-stats { gap: 26px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 30px; text-align: left; }
+      .footer-about p { max-width: 100%; }
+      .socials { justify-content: flex-start; }
     }
   </style>
 </head>
